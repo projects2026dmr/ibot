@@ -1,5 +1,4 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { WOJEWODZTWA_PLACEHOLDERS } from "@/data/placeholders";
 
 const QUICK_LINKS = [
   { label: "Strona główna", hash: "" },
