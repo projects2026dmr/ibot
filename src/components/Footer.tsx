@@ -1,5 +1,5 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-
+import wojewodztwa from "@/data/wojewodztwa.json";
 const QUICK_LINKS = [
   { label: "Strona główna", hash: "" },
   { label: "O nas", hash: "onas" },
