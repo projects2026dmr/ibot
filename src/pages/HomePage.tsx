@@ -686,7 +686,7 @@ function WojewodztwaSection() {
         </div>
 
         <div className="mx-auto mt-10 grid max-w-5xl grid-cols-2 gap-2.5 sm:mt-12 sm:grid-cols-3 sm:gap-3 md:grid-cols-4">
-          {WOJEWODZTWA_PLACEHOLDERS.map((woj) => (
+          {wojewodztwa.map((woj) => (
             <Link
               key={woj.slug}
               to={`/wojewodztwo/${woj.slug}`}
@@ -720,7 +720,6 @@ function WojewodztwaSection() {
           {[
             { value: "16", label: "Województw" },
             { value: "380", label: "Powiatów" },
-            { value: "2 478", label: "Gmin" },
           ].map((s, i) => (
             <div key={s.label} className="flex items-center gap-4 sm:gap-8">
               {i > 0 && (
@@ -1097,7 +1096,7 @@ export default function HomePage() {
     <>
       <SEOHead
         title="iBOT — Agencja SEO | Lokalne SEO w całej Polsce"
-        description="Agencja SEO specjalizująca się w pozycjonowaniu lokalnym. Obsługujemy 16 województw, 380 powiatów i 2478 gmin. Bezpłatna konsultacja SEO."
+        description="Agencja SEO specjalizująca się w pozycjonowaniu lokalnym. Obsługujemy 16 województw i 380 powiatów w całej Polsce. Bezpłatna konsultacja SEO."
         canonicalPath="/"
       />
 
