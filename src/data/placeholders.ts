@@ -1,27 +1,3 @@
-export interface Wojewodztwo {
-  name: string;
-  slug: string;
-}
-
-export const WOJEWODZTWA_PLACEHOLDERS: Wojewodztwo[] = [
-  { name: "Dolnośląskie", slug: "dolnoslaskie" },
-  { name: "Kujawsko-pomorskie", slug: "kujawsko-pomorskie" },
-  { name: "Lubelskie", slug: "lubelskie" },
-  { name: "Lubuskie", slug: "lubuskie" },
-  { name: "Łódzkie", slug: "lodzkie" },
-  { name: "Małopolskie", slug: "malopolskie" },
-  { name: "Mazowieckie", slug: "mazowieckie" },
-  { name: "Opolskie", slug: "opolskie" },
-  { name: "Podkarpackie", slug: "podkarpackie" },
-  { name: "Podlaskie", slug: "podlaskie" },
-  { name: "Pomorskie", slug: "pomorskie" },
-  { name: "Śląskie", slug: "slaskie" },
-  { name: "Świętokrzyskie", slug: "swietokrzyskie" },
-  { name: "Warmińsko-mazurskie", slug: "warminsko-mazurskie" },
-  { name: "Wielkopolskie", slug: "wielkopolskie" },
-  { name: "Zachodniopomorskie", slug: "zachodniopomorskie" },
-];
-
 export const FAQ_ITEMS = [
   {
     question: "Czym jest lokalne SEO?",
@@ -39,9 +15,9 @@ export const FAQ_ITEMS = [
       "Pierwsze efekty działań SEO są zazwyczaj widoczne po 3–6 miesiącach. Jednak pełne rezultaty, w tym stabilne pozycje w top 3, mogą wymagać 6–12 miesięcy systematycznej pracy.",
   },
   {
-    question: "Czy oferujecie SEO dla wszystkich województw?",
+    question: "Czy oferujecie SEO dla wszystkich regionów?",
     answer:
-      "Tak! Nasza platforma obsługuje wszystkie 16 województw, 380 powiatów i 2478 gmin w Polsce. Niezależnie od lokalizacji Twojej firmy, możemy pomóc Ci zbudować silną obecność online.",
+      "Tak! Nasza platforma obsługuje wszystkie 16 województw i 380 powiatów w Polsce. Niezależnie od lokalizacji Twojej firmy, możemy pomóc Ci zbudować silną obecność online.",
   },
   {
     question: "Ile kosztuje lokalne SEO?",
