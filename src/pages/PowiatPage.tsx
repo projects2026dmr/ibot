@@ -1,53 +1,86 @@
 import { useParams, Link } from "react-router-dom";
+import SEOHead from "@/components/SEOHead";
+import Breadcrumb from "@/components/Breadcrumb";
+
+import {
+  getPowiatBySlug,
+  getPowiatSeoTitle,
+  getPowiatSeoDescription,
+  getPowiatBreadcrumb
+} from "@/data/poland";
 
 export default function PowiatPage() {
-  const { powiatSlug } = useParams<{ powiatSlug: string }>();
+  const { powiatSlug } = useParams();
+
+  if (!powiatSlug) {
+    return <div className="container mx-auto px-4 py-10">Brak danych.</div>;
+  }
+
+  const powiat = getPowiatBySlug(powiatSlug);
+
+  if (!powiat) {
+    return (
+      <div className="container mx-auto px-4 py-10">
+        <h1 className="text-2xl font-bold mb-4">Nie znaleziono powiatu</h1>
+        <p className="text-slate-600">Sprawdź poprawność adresu URL.</p>
+      </div>
+    );
+  }
+
+  const breadcrumb = getPowiatBreadcrumb(powiat);
 
   return (
-    <div className="min-h-[60vh]">
-      <div className="border-b border-slate-200 bg-slate-50">
-        <div className="container mx-auto px-4 py-3">
-          <nav className="flex items-center gap-2 text-sm text-slate-500">
-            <Link to="/" className="hover:text-indigo-600 transition-colors">
-              Strona główna
-            </Link>
-            <span>/</span>
-            <span className="font-medium text-slate-900">
-              Powiat: {powiatSlug}
-            </span>
-          </nav>
-        </div>
+    <div className="container mx-auto px-4 py-10">
+      {/* SEO */}
+      <SEOHead
+        title={getPowiatSeoTitle(powiat)}
+        description={getPowiatSeoDescription(powiat)}
+        canonicalPath={`/powiat/${powiat.slug}`}
+        ogType="website"
+      />
+
+      {/* Breadcrumb */}
+      <Breadcrumb items={breadcrumb} />
+
+      {/* Page Title */}
+      <h1 className="text-3xl font-bold text-slate-900 mb-4">
+        SEO w powiecie {powiat.name}
+      </h1>
+
+      <p className="text-slate-600 mb-6 max-w-2xl leading-relaxed">
+        Poznaj możliwości pozycjonowania lokalnego w powiecie {powiat.name}.
+        Analizujemy widoczność firm, konkurencję oraz potencjał wyszukiwań,
+        aby pomóc Twojej firmie zdobywać klientów w regionie.
+      </p>
+
+      {/* Województwo info */}
+      <div className="mb-8">
+        <h2 className="text-xl font-semibold text-slate-800 mb-2">
+          Województwo
+        </h2>
+        <Link
+          to={`/wojewodztwo/${powiat.woj.slug}`}
+          className="inline-block rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 hover:border-indigo-400 hover:text-indigo-600 transition-colors"
+        >
+          {powiat.woj.name}
+        </Link>
       </div>
 
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <div className="mx-auto max-w-3xl text-center">
-            <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-wider text-indigo-600">
-              Powiat
-            </span>
-            <h1 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl md:text-5xl">
-              SEO w powiecie: {powiatSlug}
-            </h1>
-            <p className="mt-6 text-lg text-slate-600">
-              Strona powiatu — treść pojawi się wkrótce.
-            </p>
+      {/* Local SEO info */}
+      <div className="prose prose-slate max-w-none">
+        <h2>Pozycjonowanie lokalne w powiecie {powiat.name}</h2>
+        <p>
+          Powiat {powiat.name} to region o rosnącym potencjale biznesowym.
+          Lokalne SEO pozwala firmom zwiększyć widoczność w Google, dotrzeć do
+          klientów z okolicy oraz budować przewagę nad konkurencją.
+        </p>
 
-            <div className="mt-12 rounded-2xl border border-slate-200 bg-slate-50 p-10">
-              <p className="text-sm text-slate-500">
-                🚧 Ta strona jest w trakcie budowy. Wkrótce pojawią się tu
-                szczegółowe informacje o usługach SEO w tym powiecie.
-              </p>
-            </div>
-
-            <Link
-              to="/"
-              className="mt-8 inline-flex items-center rounded-xl bg-indigo-600 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-indigo-700"
-            >
-              ← Wróć na stronę główną
-            </Link>
-          </div>
-        </div>
-      </section>
+        <p>
+          Optymalizacja wizytówki Google Business Profile, lokalne linki,
+          treści dopasowane do regionu oraz analiza konkurencji to kluczowe
+          elementy skutecznej strategii SEO w tym powiecie.
+        </p>
+      </div>
     </div>
   );
 }
