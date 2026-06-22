@@ -346,7 +346,7 @@ function HeroSection() {
 
       <div className="container relative mx-auto px-4">
         {/* ⭐ 2 KOLONLU PREMIUM GRID */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.6fr_1fr] gap-12 items-center">
 
           {/* SOL TARAF — METİN */}
           <div className="max-w-2xl">
