@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import Breadcrumb from "@/components/Breadcrumb";
+import { getPremiumWojContent } from "@/data/premiumWojContent";
 
 import {
   getWojewodztwoBySlug,
@@ -24,6 +25,7 @@ export default function WojewodztwoPage() {
 
   const woj = getWojewodztwoBySlug(wojSlug);
 
+  // ❗ HATA BURADAYDI — premium buraya taşındı
   if (!woj) {
     return (
       <div className="container mx-auto px-4 py-10">
@@ -33,10 +35,13 @@ export default function WojewodztwoPage() {
     );
   }
 
+  // ⭐ Artık güvenli
+  const premium = getPremiumWojContent(woj.slug, woj.name);
+
   const powiaty = getPowiatyByWojewodztwo(woj.slug);
   const breadcrumb = getWojBreadcrumb(woj);
 
-  // JSON-LD ItemList (powiaty w województwie)
+  // JSON-LD
   useEffect(() => {
     const jsonLd = {
       "@context": "https://schema.org",
@@ -66,7 +71,6 @@ export default function WojewodztwoPage() {
 
   return (
     <div className="container mx-auto px-4 py-10">
-      {/* SEO */}
       <SEOHead
         title={getWojSeoTitle(woj)}
         description={getWojSeoDescription(woj)}
@@ -74,7 +78,6 @@ export default function WojewodztwoPage() {
         ogType="website"
       />
 
-      {/* Breadcrumb */}
       <Breadcrumb items={breadcrumb} />
 
       {/* HERO */}
@@ -85,40 +88,35 @@ export default function WojewodztwoPage() {
         <p className="text-lg text-slate-600 max-w-3xl leading-relaxed">
           Kompleksowe pozycjonowanie lokalne w województwie {woj.name}. Zwiększamy
           widoczność firm w Google, budujemy przewagę konkurencyjną oraz pomagamy
-          zdobywać klientów z wyszukiwarki. Sprawdź analizę regionu, najważniejsze
-          powiaty oraz potencjał SEO w Twojej lokalizacji.
+          zdobywać klientów z wyszukiwarki.
         </p>
       </section>
 
       {/* PREMIUM CONTENT */}
-import { getPremiumWojContent } from "@/data/premiumWojContent";
+      <section className="prose prose-slate max-w-none mb-12">
+        <h2>Dlaczego SEO w województwie {woj.name} jest tak skuteczne?</h2>
+        <p>{premium.whyEffective}</p>
 
-const premium = getPremiumWojContent(woj);
+        <h3>Najważniejsze czynniki wpływające na SEO w regionie</h3>
+        <ul>
+          {premium.factors.map((f) => (
+            <li key={f}>{f}</li>
+          ))}
+        </ul>
 
-<section className="prose prose-slate max-w-none mb-12">
-  <h2>Dlaczego SEO w województwie {woj.name} jest tak skuteczne?</h2>
-  <p>{premium.whyEffective}</p>
+        <h2>Jak wygląda konkurencja w Google?</h2>
+        <p>{premium.competition}</p>
 
-  <h3>Najważniejsze czynniki wpływające na SEO w regionie</h3>
-  <ul>
-    {premium.factors.map((f) => (
-      <li key={f}>{f}</li>
-    ))}
-  </ul>
+        <h2>Najczęściej pozycjonowane branże</h2>
+        <ul>
+          {premium.industries.map((b) => (
+            <li key={b}>{b}</li>
+          ))}
+        </ul>
 
-  <h2>Jak wygląda konkurencja w Google?</h2>
-  <p>{premium.competition}</p>
-
-  <h2>Najczęściej pozycjonowane branże</h2>
-  <ul>
-    {premium.industries.map((b) => (
-      <li key={b}>{b}</li>
-    ))}
-  </ul>
-
-  <h2>Potencjał SEO w powiatach województwa {woj.name}</h2>
-  <p>{premium.powiatIntro}</p>
-</section>
+        <h2>Potencjał SEO w powiatach województwa {woj.name}</h2>
+        <p>{premium.powiatIntro}</p>
+      </section>
 
       {/* POWIAT LIST */}
       <h2 className="text-2xl font-semibold text-slate-800 mb-4">
