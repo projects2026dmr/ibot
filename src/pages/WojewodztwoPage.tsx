@@ -42,32 +42,73 @@ export default function WojewodztwoPage() {
   const breadcrumb = getWojBreadcrumb(woj);
 
   // JSON-LD
-  useEffect(() => {
-    const jsonLd = {
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      itemListElement: powiaty.map((p, index) => ({
+useEffect(() => {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": `SEO w województwie ${woj.name}`,
+    "description": getWojSeoDescription(woj),
+    "url": `${window.location.origin}/wojewodztwo/${woj.slug}`,
+
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": breadcrumb.map((item, index) => ({
         "@type": "ListItem",
-        position: index + 1,
-        name: p.name,
-        url: `${window.location.origin}/powiat/${p.slug}`
+        "position": index + 1,
+        "name": item.label,
+        "item": `${window.location.origin}${item.href}`
       }))
-    };
+    },
 
-    const old = document.getElementById("itemlist-jsonld");
-    if (old) old.remove();
+    "about": {
+      "@type": "Thing",
+      "name": `SEO w województwie ${woj.name}`,
+      "description": `Analiza SEO, konkurencji i potencjału wyszukiwania w województwie ${woj.name}.`
+    },
 
-    const script = document.createElement("script");
-    script.id = "itemlist-jsonld";
-    script.type = "application/ld+json";
-    script.textContent = JSON.stringify(jsonLd);
-    document.head.appendChild(script);
+    "mainEntity": {
+      "@type": "AdministrativeArea",
+      "name": woj.name,
+      "alternateName": `Województwo ${woj.name}`,
+      "url": `${window.location.origin}/wojewodztwo/${woj.slug}`,
+      "containedInPlace": {
+        "@type": "Country",
+        "name": "Polska"
+      },
+      "hasPart": powiaty.map((p) => ({
+        "@type": "AdministrativeArea",
+        "name": p.name,
+        "url": `${window.location.origin}/powiat/${p.slug}`
+      }))
+    },
 
-    return () => {
-      const cleanup = document.getElementById("itemlist-jsonld");
-      if (cleanup) cleanup.remove();
-    };
-  }, [powiaty]);
+    "areaServed": {
+      "@type": "AdministrativeArea",
+      "name": woj.name
+    },
+
+    "itemListElement": powiaty.map((p, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": p.name,
+      "url": `${window.location.origin}/powiat/${p.slug}`
+    }))
+  };
+
+  const old = document.getElementById("woj-jsonld");
+  if (old) old.remove();
+
+  const script = document.createElement("script");
+  script.id = "woj-jsonld";
+  script.type = "application/ld+json";
+  script.textContent = JSON.stringify(jsonLd);
+  document.head.appendChild(script);
+
+  return () => {
+    const cleanup = document.getElementById("woj-jsonld");
+    if (cleanup) cleanup.remove();
+  };
+}, [woj, powiaty, breadcrumb]);
 
   return (
     <div className="container mx-auto px-4 py-10">
