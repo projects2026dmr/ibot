@@ -1,3 +1,4 @@
+import { getWojFaqContent } from "@/data/wojFaq";
 import { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
@@ -37,7 +38,7 @@ export default function WojewodztwoPage() {
 
   // ⭐ Artık güvenli
   const premium = getPremiumWojContent(woj.slug, woj.name);
-
+  const faq = getWojFaqContent(woj.name);
   const powiaty = getPowiatyByWojewodztwo(woj.slug);
   const breadcrumb = getWojBreadcrumb(woj);
 
@@ -222,8 +223,26 @@ useEffect(() => {
     </Link>
   ))}
 </div>
+{/* FAQ SECTION */}
+<section className="mb-16">
+  <h2 className="text-3xl font-bold text-slate-900 mb-6">
+    Najczęściej zadawane pytania (FAQ)
+  </h2>
 
-
+  <div className="space-y-6">
+    {faq.map((item) => (
+      <div
+        key={item.q}
+        className="border border-slate-200 rounded-xl p-5 bg-white shadow-sm"
+      >
+        <h3 className="text-xl font-semibold text-slate-900 mb-2">
+          {item.q}
+        </h3>
+        <p className="text-slate-700 leading-relaxed">{item.a}</p>
+      </div>
+    ))}
+  </div>
+</section>
       {/* CTA */}
 <section className="bg-gradient-to-r from-indigo-600 to-indigo-700 text-white rounded-2xl p-10 text-center shadow-lg">
   <h2 className="text-3xl font-bold mb-4">
