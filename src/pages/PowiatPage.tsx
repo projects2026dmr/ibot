@@ -223,7 +223,7 @@ export default function PowiatPage() {
           Skontaktuj się z nami i otrzymaj darmową analizę SEO.
         </p>
  <a
-          href="/#kontakt"
+          href="/#"
           className="inline-block bg-white text-indigo-700 font-semibold px-8 py-4 rounded-xl shadow hover:bg-slate-100 transition"
         >
           Darmowa konsultacja SEO
