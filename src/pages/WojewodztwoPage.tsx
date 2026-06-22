@@ -81,76 +81,124 @@ export default function WojewodztwoPage() {
       <Breadcrumb items={breadcrumb} />
 
       {/* HERO */}
-      <section className="mb-10">
-        <h1 className="text-4xl font-bold text-slate-900 mb-4">
-          SEO w województwie {woj.name}
-        </h1>
-        <p className="text-lg text-slate-600 max-w-3xl leading-relaxed">
-          Kompleksowe pozycjonowanie lokalne w województwie {woj.name}. Zwiększamy
-          widoczność firm w Google, budujemy przewagę konkurencyjną oraz pomagamy
-          zdobywać klientów z wyszukiwarki.
-        </p>
-      </section>
+<section className="mb-12">
+  <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight mb-4">
+    SEO w województwie{" "}
+    <span className="bg-gradient-to-r from-indigo-500 to-emerald-500 bg-clip-text text-transparent">
+      {woj.name}
+    </span>
+  </h1>
+
+  <p className="text-lg md:text-xl text-slate-600 max-w-3xl leading-relaxed">
+    Kompleksowe pozycjonowanie lokalne w województwie {woj.name}. Zwiększamy
+    widoczność firm w Google, budujemy przewagę konkurencyjną oraz pomagamy
+    zdobywać klientów z wyszukiwarki. Sprawdź analizę regionu, najważniejsze
+    powiaty oraz potencjał SEO w Twojej lokalizacji.
+  </p>
+</section>
+
 
       {/* PREMIUM CONTENT */}
-      <section className="prose prose-slate max-w-none mb-12">
-        <h2>Dlaczego SEO w województwie {woj.name} jest tak skuteczne?</h2>
-        <p>{premium.whyEffective}</p>
+<section className="mb-16 space-y-10">
 
-        <h3>Najważniejsze czynniki wpływające na SEO w regionie</h3>
-        <ul>
-          {premium.factors.map((f) => (
-            <li key={f}>{f}</li>
-          ))}
-        </ul>
+  <div>
+    <h2 className="text-3xl font-bold text-slate-900 mb-4">
+      Dlaczego SEO w województwie {woj.name} jest tak skuteczne?
+    </h2>
+    <p className="text-slate-700 leading-relaxed text-lg">
+      {premium.whyEffective}
+    </p>
+  </div>
 
-        <h2>Jak wygląda konkurencja w Google?</h2>
-        <p>{premium.competition}</p>
+  <div>
+    <h3 className="text-2xl font-semibold text-slate-900 mb-3">
+      Najważniejsze czynniki wpływające na SEO w regionie
+    </h3>
 
-        <h2>Najczęściej pozycjonowane branże</h2>
-        <ul>
-          {premium.industries.map((b) => (
-            <li key={b}>{b}</li>
-          ))}
-        </ul>
+    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      {premium.factors.map((f) => (
+        <li
+          key={f}
+          className="flex items-start gap-2 text-slate-700 text-base"
+        >
+          <span className="text-emerald-500 mt-1">✔</span>
+          {f}
+        </li>
+      ))}
+    </ul>
+  </div>
 
-        <h2>Potencjał SEO w powiatach województwa {woj.name}</h2>
-        <p>{premium.powiatIntro}</p>
-      </section>
+  <div>
+    <h2 className="text-3xl font-bold text-slate-900 mb-4">
+      Jak wygląda konkurencja w Google?
+    </h2>
+    <p className="text-slate-700 leading-relaxed text-lg">
+      {premium.competition}
+    </p>
+  </div>
 
+  <div>
+    <h2 className="text-3xl font-bold text-slate-900 mb-4">
+      Najczęściej pozycjonowane branże
+    </h2>
+
+    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      {premium.industries.map((b) => (
+        <li
+          key={b}
+          className="flex items-start gap-2 text-slate-700 text-base"
+        >
+          <span className="text-indigo-500 mt-1">•</span>
+          {b}
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <div>
+    <h2 className="text-3xl font-bold text-slate-900 mb-4">
+      Potencjał SEO w powiatach województwa {woj.name}
+    </h2>
+    <p className="text-slate-700 leading-relaxed text-lg">
+      {premium.powiatIntro}
+    </p>
+  </div>
+
+</section>
       {/* POWIAT LIST */}
       <h2 className="text-2xl font-semibold text-slate-800 mb-4">
         Powiaty w województwie {woj.name}
       </h2>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mb-12">
-        {powiaty.map((p) => (
-          <Link
-            key={p.slug}
-            to={`/powiat/${p.slug}`}
-            className="block rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 hover:border-indigo-500 hover:text-indigo-600 transition-colors shadow-sm"
-          >
-            {p.name}
-          </Link>
-        ))}
-      </div>
+<div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mb-12">
+  {powiaty.map((p) => (
+    <Link
+      key={p.slug}
+      to={`/powiat/${p.slug}`}
+      className="block rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700 hover:border-indigo-500 hover:bg-indigo-50 hover:text-indigo-700 transition-all shadow-sm"
+    >
+      {p.name}
+    </Link>
+  ))}
+</div>
+
 
       {/* CTA */}
-      <section className="bg-indigo-50 border border-indigo-200 rounded-xl p-8 text-center">
-        <h2 className="text-2xl font-bold text-indigo-700 mb-3">
-          Chcesz zwiększyć widoczność swojej firmy?
-        </h2>
-        <p className="text-slate-700 mb-6">
-          Oferujemy profesjonalne pozycjonowanie lokalne w całym województwie {woj.name}.
-          Skontaktuj się z nami i otrzymaj darmową analizę SEO.
-        </p>
-        <a
-          href="/#kontakt"
-          className="inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-indigo-700 transition"
-        >
-          Darmowa konsultacja SEO
-        </a>
-      </section>
+<section className="bg-gradient-to-r from-indigo-600 to-indigo-700 text-white rounded-2xl p-10 text-center shadow-lg">
+  <h2 className="text-3xl font-bold mb-4">
+    Chcesz zwiększyć widoczność swojej firmy?
+  </h2>
+  <p className="text-lg opacity-90 mb-6">
+    Oferujemy profesjonalne pozycjonowanie lokalne w całym województwie {woj.name}.
+    Skontaktuj się z nami i otrzymaj darmową analizę SEO.
+  </p>
+  <a
+    href="/#kontakt"
+    className="inline-block bg-white text-indigo-700 font-semibold px-8 py-4 rounded-xl shadow hover:bg-slate-100 transition"
+  >
+    Darmowa konsultacja SEO
+  </a>
+</section>
     </div>
   );
 }
