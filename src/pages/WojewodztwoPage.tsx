@@ -113,12 +113,12 @@ useEffect(() => {
   return (
     <div className="container mx-auto px-4 py-10">
       <SEOHead
-        title={getWojSeoTitle(woj)}
-        description={getWojSeoDescription(woj)}
-        canonicalPath={`/wojewodztwo/${woj.slug}`}
-        ogType="website"
-      />
-
+  title={getWojSeoTitle(woj)}
+  description={getWojSeoDescription(woj)}
+  canonicalPath={`/wojewodztwo/${woj.slug}`}
+  ogType="website"
+  imageUrl={`/og/woj/${woj.slug}.jpg`}   // ⭐ YENİ EKLENDİ
+/>
       <Breadcrumb items={breadcrumb} />
 
       {/* HERO */}
