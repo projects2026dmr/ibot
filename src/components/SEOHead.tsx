@@ -62,7 +62,7 @@ export default function SEOHead({
     // OG image fallback
     const finalImage =
       imageUrl ||
-      `${origin}/og-default.jpg`; // fallback image (sen ekleyeceksin)
+      `${origin}/og/default.jpg`; // fallback image (sen ekleyeceksin)
 
     // OG tags
     const ogTags = [
