@@ -65,11 +65,11 @@ export default function PowiatPage() {
         "image": `${origin}/og/powiat/${powiat.slug}.jpg`,
         "author": {
           "@type": "Organization",
-          "name": "Arena AI"
+          "name": "iBOT — Agencja SEO"
         },
         "publisher": {
           "@type": "Organization",
-          "name": "Arena AI",
+          "name": "iBOT — Agencja SEO",
           "logo": {
             "@type": "ImageObject",
             "url": `${origin}/og/default.jpg`
