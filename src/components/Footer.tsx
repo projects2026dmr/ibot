@@ -9,7 +9,7 @@ const QUICK_LINKS = [
 ];
 
 const SOCIAL_LINKS = [
-  { icon: "💬", label: "WhatsApp", href: "https://wa.me/48123456789" },
+  { icon: "💬", label: "WhatsApp", href: "https://wa.me/48884805463" },
   { icon: "✈️", label: "Telegram", href: "https://t.me/ibot_seo" },
   { icon: "📸", label: "Instagram", href: "https://instagram.com/ibot.seo" },
 ];
@@ -129,7 +129,7 @@ export default function Footer() {
                   📞
                 </span>
                 <a
-                  href="tel:+48123456789"
+                  href="tel:+48884805463"
                   className="transition-colors duration-200 hover:text-indigo-400"
                 >
                   +48 884 805 463
@@ -140,7 +140,7 @@ export default function Footer() {
                   💬
                 </span>
                 <a
-                  href="https://wa.me/48123456789"
+                  href="https://wa.me/48884805463"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="transition-colors duration-200 hover:text-indigo-400"
