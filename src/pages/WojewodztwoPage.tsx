@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import Breadcrumb from "@/components/Breadcrumb";
-import { pingIndexNow } from "@/utils/indexNow";
 import { getPremiumWojContent } from "@/data/premiumWojContent";
 import {
   getWojewodztwoBySlug,
@@ -120,13 +119,6 @@ export default function WojewodztwoPage() {
       if (cleanup) cleanup.remove();
     };
   }, [woj, powiaty, breadcrumb]);
-useEffect(() => {
-  if (typeof window === "undefined") return;
-
-  const origin = window.location.origin;
-  const url = `${origin}/wojewodztwo/${slug}`;
-
-  pingIndexNow(url);
 }, [slug]);
   return (
     <div className="bg-slate-50">
