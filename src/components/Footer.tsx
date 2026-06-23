@@ -57,7 +57,7 @@ export default function Footer() {
               className="group inline-flex items-center gap-2"
             >
               <span className="text-2xl transition-transform duration-200 group-hover:scale-110">
-                🤖
+                🐧
               </span>
               <div className="flex flex-col leading-tight">
                 <span className="text-lg font-bold text-white">iBOT</span>
