@@ -45,7 +45,7 @@ const jsonLd = {
     "name": "iBOT — Agencja SEO",
     "image": "https://ibot-agencja-seo.vercel.app/logo.png",
     "url": "https://ibot-agencja-seo.vercel.app/",
-    "telephone": "+48 123 456 789",
+    "telephone": "+48 884 805 463",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Przykładowa 1",
@@ -334,7 +334,7 @@ const CONTACT_ITEMS = [
   {
     icon: "📞",
     label: "Telefon",
-    value: "+48 123 456 789",
+    value: "+48 884 805 463",
     href: "tel:+48123456789",
     color: "bg-emerald-100 text-emerald-600",
   },
