@@ -1,14 +1,10 @@
-const fs = require("fs");
-const path = require("path");
+import fs from "fs";
+import path from "path";
+import powiaty from "../src/data/powiaty.json" assert { type: "json" };
+import wojewodztwa from "../src/data/wojewodztwa.json" assert { type: "json" };
 
-// JSON dosyalarını içeri al
-const powiaty = require("../src/data/powiaty.json");
-const wojewodztwa = require("../src/data/wojewodztwa.json");
-
-// Domain
 const DOMAIN = "https://ibot-agencja-seo.vercel.app";
 
-// URL oluşturucu
 function url(loc, priority = "0.80") {
   return `
     <url>
@@ -34,7 +30,6 @@ function generateSitemap() {
     urls += url(`/powiat/${p.slug}`);
   });
 
-  // XML çıktısı
   const xml = `
     <?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -42,8 +37,7 @@ function generateSitemap() {
     </urlset>
   `.trim();
 
-  // public/sitemap.xml dosyasına yaz
-  const filePath = path.join(__dirname, "..", "public", "sitemap.xml");
+  const filePath = path.join(process.cwd(), "public", "sitemap.xml");
   fs.writeFileSync(filePath, xml);
 
   console.log("Sitemap başarıyla oluşturuldu!");
