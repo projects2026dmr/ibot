@@ -2,6 +2,64 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import wojewodztwa from "@/data/wojewodztwa.json";
+const jsonLd = {
+  organization: {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "iBOT — Agencja SEO",
+    "url": "https://twojadomena.pl/",
+    "logo": "https://twojadomena.pl/logo.png",
+    "description": "Agencja SEO specjalizująca się w pozycjonowaniu lokalnym w całej Polsce.",
+    "sameAs": [
+      "https://www.facebook.com/...",
+      "https://www.linkedin.com/...",
+      "https://www.instagram.com/..."
+    ]
+  },
+  website: {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://twojadomena.pl/",
+    "name": "iBOT — Agencja SEO",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://twojadomena.pl/szukaj?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  },
+  homepage: {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://twojadomena.pl/",
+    "name": "iBOT — Agencja SEO | Lokalne SEO w całej Polsce",
+    "description": "Agencja SEO specjalizująca się w pozycjonowaniu lokalnym. Obsługujemy 16 województw i 380 powiatów w całej Polsce.",
+    "inLanguage": "pl-PL",
+    "isPartOf": {
+      "@type": "WebSite",
+      "url": "https://twojadomena.pl/"
+    }
+  },
+  localBusiness: {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "iBOT — Agencja SEO",
+    "image": "https://twojadomena.pl/logo.png",
+    "url": "https://twojadomena.pl/",
+    "telephone": "+48 123 456 789",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Przykładowa 1",
+      "addressLocality": "Gdańsk",
+      "postalCode": "80-000",
+      "addressCountry": "PL"
+    },
+    "priceRange": "$$",
+    "areaServed": {
+      "@type": "Country",
+      "name": "Polska"
+    }
+  }
+};
 
 /** Smooth-scroll to an element by ID. Used by all in-page CTAs. */
 function scrollToSection(id: string) {
@@ -1105,22 +1163,46 @@ export default function HomePage() {
     }
   }, [hash]);
 
-  return (
-    <>
-      <SEOHead
-        title="iBOT — Agencja SEO | Lokalne SEO w całej Polsce"
-        description="Agencja SEO specjalizująca się w pozycjonowaniu lokalnym. Obsługujemy 16 województw i 380 powiatów w całej Polsce. Bezpłatna konsultacja SEO."
-        canonicalPath="/"
-      />
+return (
+  <>
+    <SEOHead
+      title="iBOT — Agencja SEO | Lokalne SEO w całej Polsce"
+      description="Agencja SEO specjalizująca się w pozycjonowaniu lokalnym..."
+      canonicalPath="/"
+    />
 
-      <HeroSection />
-      <AboutSection />
-      <ServicesSection />
-      <UspSection />
-      <WojewodztwaSection />
-      <FaqSection />
-      <ContactSection />
-      <CtaBottomSection />
-    </>
-  );
+    {/* JSON-LD — Organization */}
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd.organization) }}
+    />
+
+    {/* JSON-LD — WebSite */}
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd.website) }}
+    />
+
+    {/* JSON-LD — WebPage (Home) */}
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd.homepage) }}
+    />
+
+    {/* JSON-LD — LocalBusiness */}
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd.localBusiness) }}
+    />
+
+    <HeroSection />
+    <AboutSection />
+    <ServicesSection />
+    <UspSection />
+    <WojewodztwaSection />
+    <FaqSection />
+    <ContactSection />
+    <CtaBottomSection />
+  </>
+);
 }
