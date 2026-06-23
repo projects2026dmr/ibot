@@ -119,7 +119,14 @@ export default function WojewodztwoPage() {
       if (cleanup) cleanup.remove();
     };
   }, [woj, powiaty, breadcrumb]);
+  import { pingIndexNow } from "@/utils/indexNow";
 
+useEffect(() => {
+  const origin = window.location.origin;
+  const url = `${origin}/wojewodztwo/${slug}`;
+
+  pingIndexNow(url);
+}, [slug]);
   return (
     <div className="bg-slate-50">
       <div className="container mx-auto px-4 py-10">
