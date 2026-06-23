@@ -416,59 +416,98 @@ function HeroSection() {
             </span>
           </div>
 
-{/* CONTENT WRAPPER */}
-<div className="mx-auto max-w-[1200px] px-6 sm:px-10 lg:px-16 text-left">
+{/* Headline — now fits in ONE LINE on desktop */}
+          <h1 className="mx-auto max-w-[1100px] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight text-white">
+  Zdobądź więcej klientów w swoim mieście
+          </h1>
 
-  {/* Headline */}
-  <h1 className="max-w-[1100px] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight text-white">
-    Zdobądź więcej klientów w swoim mieście
-  </h1>
 
-  <h2 className="sr-only">
-    Profesjonalne pozycjonowanie lokalne w całej Polsce
-  </h2>
+          <h2 className="sr-only">
+            Profesjonalne pozycjonowanie lokalne w całej Polsce
+          </h2>
 
-  {/* Subheadline */}
-  <p className="mt-6 max-w-[900px] text-lg md:text-xl text-slate-300 leading-relaxed">
-    Lokalne SEO, które przynosi realne wyniki. Pomagamy firmom
-    w całej Polsce dominować w lokalnych wynikach Google i zdobywać
-    klientów z ich regionu.
-  </p>
+          {/* Subheadline */}
+          <p className="mt-6 mx-auto max-w-[900px] text-lg md:text-xl text-slate-300 leading-relaxed">
+            Lokalne SEO, które przynosi realne wyniki. Pomagamy firmom
+            w całej Polsce dominować w lokalnych wynikach Google i zdobywać
+            klientów z ich regionu.
+          </p>
 
-  <p className="mt-4 max-w-[900px] text-base text-slate-400 leading-relaxed">
-    Nasze strategie SEO oparte są na danych, analizie konkurencji i lokalnych trendach wyszukiwania. 
-    Dzięki temu Twoja firma może skutecznie docierać do klientów z Twojego miasta i okolic.
-  </p>
+          <p className="mt-4 mx-auto max-w-[900px] text-base text-slate-400 leading-relaxed">
+            Nasze strategie SEO oparte są na danych, analizie konkurencji i lokalnych trendach wyszukiwania. 
+            Dzięki temu Twoja firma może skutecznie docierać do klientów z Twojego miasta i okolic.
+          </p>
 
-  {/* Benefits */}
-  <ul className="mt-10 max-w-[850px] flex flex-col gap-3 text-left sm:text-lg">
-    {HERO_BENEFITS.map((benefit) => (
-      <li key={benefit} className="flex items-start gap-3 text-slate-300">
-        <svg
-          className="mt-1 h-5 w-5 shrink-0 text-emerald-400"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          strokeWidth={2.5}
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-        </svg>
-        {benefit}
-      </li>
-    ))}
-  </ul>
+          <section className="sr-only">
+            <p>
+              iBOT to agencja SEO specjalizująca się w pozycjonowaniu lokalnym w całej Polsce.
+              Oferujemy kompleksowe usługi SEO dla firm działających w 16 województwach i 380 powiatach.
+            </p>
+          </section>
 
-  {/* CTAs */}
-  <div className="mt-12 flex flex-col sm:flex-row gap-4">
-    ...
-  </div>
+          {/* Benefits */}
+          <ul className="mt-10 mx-auto max-w-[850px] flex flex-col gap-3 text-left sm:text-lg">
+            {HERO_BENEFITS.map((benefit) => (
+              <li
+                key={benefit}
+                className="flex items-start gap-3 text-slate-300"
+              >
+                <svg
+                  className="mt-1 h-5 w-5 shrink-0 text-emerald-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2.5}
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                {benefit}
+              </li>
+            ))}
+          </ul>
 
-  {/* Social Proof */}
-  <div className="mt-16 grid max-w-[900px] grid-cols-1 sm:grid-cols-3 gap-4">
-    ...
-  </div>
+          {/* CTAs */}
+          <div className="mt-12 flex flex-col sm:flex-row justify-center gap-4">
+            <button
+              type="button"
+              onClick={() => scrollToSection("kontakt")}
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-indigo-500 to-indigo-600 px-8 py-4 text-lg font-bold text-white shadow-lg shadow-indigo-500/25 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-indigo-500/30"
+            >
+              Bezpłatna konsultacja SEO
+              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </button>
 
-</div>
+            <button
+              type="button"
+              onClick={() => scrollToSection("uslugi")}
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-600 px-8 py-4 text-lg font-semibold text-slate-300 transition-all duration-200 hover:border-slate-500 hover:bg-white/5 hover:text-white"
+            >
+              Poznaj nasze usługi
+            </button>
+          </div>
+
+          {/* Social Proof */}
+          <div className="mt-16 grid max-w-[900px] mx-auto grid-cols-1 sm:grid-cols-3 gap-4">
+            {SOCIAL_PROOF.map((item) => (
+              <div
+                key={item.text}
+                className="flex items-center justify-center gap-3 rounded-xl border border-slate-700/50 bg-slate-800/40 px-5 py-4 backdrop-blur-sm"
+              >
+                <span className="text-xl">{item.icon}</span>
+                <span className="text-sm font-medium text-slate-300">
+                  {item.text}
+                </span>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
+}
 
 /* ──────────────────────────────────────────────────────────────────
    2) O NAS — E-E-A-T Boost
