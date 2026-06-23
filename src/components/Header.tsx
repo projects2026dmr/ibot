@@ -96,7 +96,7 @@ export default function Header() {
               onClick={() => handleNavClick("")}
             >
               <span className="text-3xl transition-transform duration-200 group-hover:scale-110">
-                🐐
+                🐧
               </span>
               <div className="flex flex-col leading-tight">
                 <span className="text-xl font-bold tracking-tight text-slate-900">
@@ -171,7 +171,7 @@ export default function Header() {
             className="group flex items-center gap-2"
             onClick={() => handleNavClick("")}
           >
-            <span className="text-3xl">🐐</span>
+            <span className="text-3xl">🐧</span>
             <div className="flex flex-col leading-tight">
               <span className="text-xl font-bold tracking-tight text-slate-900">
                 iBOT
@@ -297,7 +297,7 @@ export default function Header() {
             </div>
 
             <p className="mt-6 text-center text-sm text-slate-400">
-              🐐 iBOT — Agencja SEO
+              🐧 iBOT — Agencja SEO
             </p>
           </div>
         </nav>
