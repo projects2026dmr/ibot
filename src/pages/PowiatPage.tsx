@@ -122,7 +122,14 @@ export default function PowiatPage() {
       if (cleanup) cleanup.remove();
     };
   }, [powiat, breadcrumb]);
+  import { pingIndexNow } from "@/utils/indexNow";
 
+useEffect(() => {
+  const origin = window.location.origin;
+  const url = `${origin}/powiat/${powiat.slug}`;
+
+  pingIndexNow(url);
+}, [powiat.slug]);
   return (
     <div className="bg-slate-50">
       <div className="container mx-auto px-4 py-10">
