@@ -2,8 +2,8 @@ import { getPowiatFaqContent } from "@/data/powiatFaq";
 import { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
-import Breadcrumb from "@/components/Breadcrumb";
 import { pingIndexNow } from "@/utils/indexNow";
+import Breadcrumb from "@/components/Breadcrumb";
 
 import {
   getPowiatBySlug,
