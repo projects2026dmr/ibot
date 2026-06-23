@@ -12,7 +12,14 @@ import {
 } from "@/data/poland";
 
 import { getPremiumPowiatContent } from "@/data/premiumPowiatContent";
+import { pingIndexNow } from "@/utils/indexNow";
 
+useEffect(() => {
+  const origin = window.location.origin;
+  const url = `${origin}/powiat/${powiat.slug}`;
+
+  pingIndexNow(url);
+}, [powiat.slug]);
 export default function PowiatPage() {
   const { powiatSlug } = useParams();
 
