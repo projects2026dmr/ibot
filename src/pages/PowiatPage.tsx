@@ -2,7 +2,6 @@ import { getPowiatFaqContent } from "@/data/powiatFaq";
 import { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
-import { pingIndexNow } from "@/utils/indexNow";
 import Breadcrumb from "@/components/Breadcrumb";
 
 import {
@@ -123,14 +122,6 @@ export default function PowiatPage() {
       if (cleanup) cleanup.remove();
     };
   }, [powiat, breadcrumb]);
-useEffect(() => {
-  if (typeof window === "undefined") return;
-
-  const origin = window.location.origin;
-  const url = `${origin}/powiat/${powiat.slug}`;
-
-  pingIndexNow(url);
-}, [powiat.slug]);
   return (
     <div className="bg-slate-50">
       <div className="container mx-auto px-4 py-10">
