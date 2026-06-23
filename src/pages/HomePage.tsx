@@ -489,7 +489,7 @@ function HeroSection() {
           </div>
 
           {/* Social Proof */}
-          <div className="mt-16 grid max-w-[900px] mx-auto grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="mt-16 grid max-w-[900px] grid-cols-1 sm:grid-cols-3 gap-4">
             {SOCIAL_PROOF.map((item) => (
               <div
                 key={item.text}
