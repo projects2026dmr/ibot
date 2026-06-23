@@ -403,7 +403,7 @@ function HeroSection() {
       <div className="relative mx-auto px-6 sm:px-10 lg:px-16 xl:px-24 max-w-[1600px]">
 
         {/* ⭐ CONTENT COLUMN — WIDE, CENTERED, PREMIUM */}
-        <div className="mx-auto max-w-[1200px] text-center">
+        <div className="mx-auto max-w-[1200px] text-left">
 
           {/* Badge */}
           <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-indigo-400/20 bg-indigo-500/10 px-5 py-2.5 backdrop-blur-sm sm:gap-3">
