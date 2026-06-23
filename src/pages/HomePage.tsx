@@ -417,9 +417,10 @@ function HeroSection() {
           </div>
 
           {/* Headline — now fits in ONE LINE on desktop */}
-          <h1 className="max-w-[1100px] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight text-white">
-            Zdobądź więcej klientów w swoim mieście
+          <h1 className="mx-auto max-w-[1100px] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight text-white">
+  Zdobądź więcej klientów w swoim mieście
           </h1>
+
 
           <h2 className="sr-only">
             Profesjonalne pozycjonowanie lokalne w całej Polsce
