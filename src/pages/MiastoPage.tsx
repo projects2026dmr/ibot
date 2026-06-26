@@ -291,7 +291,118 @@ export default function MiastoPage() {
               zmiany w wynikach wyszukiwania.
             </p>
           </section>
+<section className="space-y-4">
+  <h2 className="text-3xl font-semibold text-slate-900">
+    Typowe błędy SEO, które widzimy u firm z {miasto.name}
+  </h2>
+  <p className="text-slate-700 leading-relaxed text-lg">
+    W wielu firmach z {miasto.name} SEO było już kiedyś „robione”, ale bez jasnej strategii,
+    bez raportowania i bez zrozumienia, jakie działania faktycznie przynoszą efekty. 
+    Często spotykamy się z sytuacją, w której strona ma przypadkowo dobrane frazy, 
+    zbyt ogólne treści lub sztucznie upchane słowa kluczowe, które nie odpowiadają 
+    realnym zapytaniom użytkowników.
+  </p>
+  <p className="text-slate-700 leading-relaxed text-lg">
+    Jednym z najczęstszych błędów jest skupienie się wyłącznie na pozycjach, 
+    zamiast na ruchu i konwersjach. Sama obecność w Google na kilka fraz 
+    nie oznacza jeszcze, że SEO działa. Liczy się to, czy użytkownicy 
+    faktycznie trafiają na stronę, czy znajdują tam odpowiedzi na swoje pytania 
+    i czy podejmują działanie: kontakt, rezerwację, zakup. 
+    Dlatego w naszej pracy w {miasto.name} patrzymy szerzej niż tylko na ranking.
+  </p>
+  <p className="text-slate-700 leading-relaxed text-lg">
+    Kolejnym problemem jest brak spójności technicznej: wolne ładowanie strony, 
+    błędy 404, nieaktualne treści, brak responsywności na urządzeniach mobilnych. 
+    W połączeniu z rosnącymi wymaganiami użytkowników z {miasto.name} 
+    takie niedociągnięcia mogą skutecznie zniechęcić potencjalnych klientów, 
+    nawet jeśli strona teoretycznie jest widoczna w wynikach wyszukiwania.
+  </p>
+</section>
+<section className="space-y-4">
+  <h2 className="text-3xl font-semibold text-slate-900">
+    Najczęściej zadawane pytania o SEO w {miasto.name}
+  </h2>
 
+  <h3 className="text-xl font-semibold text-slate-900">
+    Ile kosztuje SEO w {miasto.name}?
+  </h3>
+  <p className="text-slate-700 leading-relaxed text-lg">
+    Koszt SEO zależy od konkurencji w branży, zakresu działań oraz stanu wyjściowego strony. 
+    Inaczej wycenia się pozycjonowanie lokalnego specjalisty, inaczej dużego sklepu internetowego. 
+    Zawsze zaczynamy od analizy, na podstawie której przygotowujemy konkretną propozycję 
+    dopasowaną do realiów rynku w {miasto.name}.
+  </p>
+
+  <h3 className="text-xl font-semibold text-slate-900">
+    Czy SEO w {miasto.name} działa szybciej niż reklamy?
+  </h3>
+  <p className="text-slate-700 leading-relaxed text-lg">
+    Reklamy płatne mogą przynieść ruch niemal natychmiast, ale znikają po zakończeniu budżetu. 
+    SEO w {miasto.name} wymaga czasu, ale efekty są długoterminowe. 
+    Najlepsze rezultaty osiąga się, łącząc oba kanały: reklamy dla szybkiego efektu 
+    i SEO dla stabilnej, rosnącej widoczności.
+  </p>
+
+  <h3 className="text-xl font-semibold text-slate-900">
+    Czy mała firma z {miasto.name} ma szansę konkurować z dużymi markami?
+  </h3>
+  <p className="text-slate-700 leading-relaxed text-lg">
+    Tak, pod warunkiem że strategia jest dobrze zaprojektowana. 
+    Małe firmy mogą wygrywać w niszowych frazach, w konkretnych dzielnicach 
+    lub w wyspecjalizowanych usługach. SEO w {miasto.name} nie polega tylko na walce 
+    o najbardziej ogólne frazy — często większy potencjał mają precyzyjne zapytania 
+    z wysoką intencją zakupu.
+  </p>
+</section>
+<section className="space-y-4">
+  <h2 className="text-3xl font-semibold text-slate-900">
+    Jak wygląda współpraca przy SEO w {miasto.name} krok po kroku?
+  </h2>
+  <p className="text-slate-700 leading-relaxed text-lg">
+    Współpracę zaczynamy od rozmowy i poznania Twojej firmy: branży, oferty, 
+    grupy docelowej oraz dotychczasowych działań marketingowych. 
+    Następnie wykonujemy audyt SEO oraz analizę konkurencji w {miasto.name} 
+    i województwie {miasto.wojewodztwo}. Na tej podstawie powstaje plan działań 
+    rozpisany na kolejne miesiące.
+  </p>
+  <p className="text-slate-700 leading-relaxed text-lg">
+    W trakcie współpracy regularnie raportujemy wyniki: wzrost widoczności, 
+    ruchu organicznego, liczby zapytań oraz kluczowe zmiany w pozycjach. 
+    Dzięki temu dokładnie wiesz, co dzieje się z Twoją stroną i jakie działania 
+    przynoszą najlepsze efekty. SEO w {miasto.name} traktujemy jak proces biznesowy, 
+    a nie jednorazową usługę.
+  </p>
+  <p className="text-slate-700 leading-relaxed text-lg">
+    Naszym celem jest zbudowanie długoterminowej przewagi konkurencyjnej. 
+    Nie pracujemy na krótkie „skoki” w pozycjach, tylko na stabilną, 
+    rosnącą obecność Twojej marki w Google. Dzięki temu klienci z {miasto.name} 
+    widzą Twoją firmę jako naturalny wybór w swojej kategorii.
+  </p>
+</section>
+<section className="space-y-4">
+  <h2 className="text-3xl font-semibold text-slate-900">
+    Przykładowe scenariusze sukcesu SEO w {miasto.name}
+  </h2>
+  <p className="text-slate-700 leading-relaxed text-lg">
+    Wyobraź sobie lokalną firmę usługową w {miasto.name}, która do tej pory 
+    pozyskiwała klientów głównie z poleceń. Po wdrożeniu strategii SEO 
+    zaczyna pojawiać się w Google na frazy związane z kluczowymi usługami 
+    oraz dzielnicami, w których działa. W ciągu kilku miesięcy liczba zapytań 
+    z wyszukiwarki rośnie, a firma może wybierać z większej liczby zleceń.
+  </p>
+  <p className="text-slate-700 leading-relaxed text-lg">
+    Inny scenariusz dotyczy sklepu internetowego obsługującego klientów z {miasto.name} 
+    i całego regionu. Dzięki rozbudowie contentu, optymalizacji kategorii, 
+    opisów produktów oraz sekcji poradnikowych, sklep zaczyna pojawiać się 
+    na coraz większą liczbę fraz długiego ogona. Ruch organiczny rośnie, 
+    a wraz z nim sprzedaż, bez konieczności ciągłego zwiększania budżetu reklamowego.
+  </p>
+  <p className="text-slate-700 leading-relaxed text-lg">
+    Takie historie nie są wyjątkiem — to naturalny efekt dobrze zaprojektowanego SEO 
+    w {miasto.name}. Kluczem jest konsekwencja, jakość treści i zrozumienie, 
+    jak użytkownicy faktycznie korzystają z Google w tym mieście.
+  </p>
+</section>
           {/* CTA */}
           <section className="rounded-2xl border border-indigo-100 bg-gradient-to-r from-indigo-600 via-indigo-700 to-indigo-800 text-white px-6 py-8 md:px-10 md:py-10 text-center shadow-md">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-3 md:mb-4">
