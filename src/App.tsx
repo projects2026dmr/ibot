@@ -13,6 +13,7 @@ export default function App() {
         <Route element={<Layout />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/wojewodztwo/:wojSlug" element={<WojewodztwoPage />} />
+          <Route path="/miasto/:slug" element={<MiastoPage />} />
           <Route path="/powiat/:powiatSlug" element={<PowiatPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
