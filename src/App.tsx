@@ -4,7 +4,9 @@ import Layout from "./components/Layout";
 import HomePage from "./pages/HomePage";
 import WojewodztwoPage from "./pages/WojewodztwoPage";
 import PowiatPage from "./pages/PowiatPage";
+import MiastoPage from "./pages/MiastoPage"; 
 import NotFoundPage from "./pages/NotFoundPage";
+
 
 export default function App() {
   return (
