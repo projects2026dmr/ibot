@@ -16,7 +16,7 @@ export default function MiastoPage() {
     );
   }
 
-  // JSON-LD
+  // JSON-LD dla lokalnego biznesu / strony miasta
   useEffect(() => {
     const jsonLd = {
       "@context": "https://schema.org",
@@ -83,47 +83,109 @@ export default function MiastoPage() {
 
             <p className="text-base md:text-lg lg:text-xl text-slate-600 max-w-3xl leading-relaxed">
               Profesjonalne pozycjonowanie stron w mieście {miasto.name}. 
-              Kompleksowe działania SEO dopasowane do lokalnego rynku, konkurencji i potencjału wyszukiwania.
+              Kompleksowe działania SEO dopasowane do lokalnego rynku, konkurencji i potencjału wyszukiwania
+              w województwie {miasto.wojewodztwo}.
             </p>
           </section>
 
-          {/* PREMIUM CONTENT */}
-          <section className="rounded-2xl border border-slate-200 bg-slate-50/60 px-5 py-6 md:px-7 md:py-8 space-y-8">
-
+          {/* SEKCJA: Dlaczego SEO w {miasto.name}? */}
+          <section className="rounded-2xl border border-slate-200 bg-slate-50/60 px-5 py-6 md:px-7 md:py-8 space-y-6">
             <div>
               <h2 className="text-3xl font-semibold text-slate-900 mb-3">
-                Dlaczego SEO w {miasto.name} jest tak skuteczne?
+                Dlaczego SEO w {miasto.name} jest kluczowe dla firm?
               </h2>
               <p className="text-slate-700 leading-relaxed text-base md:text-lg">
-                {miasto.name} to dynamicznie rozwijający się rynek lokalny, w którym firmy aktywnie walczą o widoczność w Google. 
-                Odpowiednio zaplanowane SEO pozwala zdobywać klientów organicznie, bez konieczności płacenia za reklamy.
+                {miasto.name} to jeden z najważniejszych lokalnych rynków w województwie {miasto.wojewodztwo}. 
+                Firmy działające tutaj aktywnie walczą o widoczność w Google, a konkurencja w wynikach wyszukiwania 
+                rośnie z miesiąca na miesiąc. Dobrze zaplanowane SEO pozwala zdobywać klientów organicznie, 
+                bez konieczności ciągłego inwestowania w reklamy płatne.
               </p>
             </div>
 
             <div>
+              <h3 className="text-xl font-semibold text-slate-900 mb-2">
+                Co daje skuteczne SEO lokalne w {miasto.name}?
+              </h3>
+              <ul className="space-y-2 text-slate-700 text-sm md:text-base">
+                <li>• stały napływ klientów z wyszukiwarki Google,</li>
+                <li>• przewagę nad lokalną konkurencją, która nie inwestuje w SEO,</li>
+                <li>• większą rozpoznawalność marki w mieście {miasto.name} i okolicy,</li>
+                <li>• stabilne źródło ruchu, niezależne od kampanii reklamowych.</li>
+              </ul>
+            </div>
+          </section>
+
+          {/* SEKCJA: Branże */}
+          <section className="space-y-6">
+            <div>
               <h2 className="text-3xl font-semibold text-slate-900 mb-3">
                 Najczęściej pozycjonowane branże w {miasto.name}
               </h2>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
-                <li className="flex items-start gap-2 text-slate-700 text-sm md:text-base">
-                  <span className="text-indigo-500 mt-1">•</span>
-                  Lokalne usługi (fryzjerzy, kosmetyczki, mechanicy)
-                </li>
-                <li className="flex items-start gap-2 text-slate-700 text-sm md:text-base">
-                  <span className="text-indigo-500 mt-1">•</span>
-                  Restauracje i gastronomia
-                </li>
-                <li className="flex items-start gap-2 text-slate-700 text-sm md:text-base">
-                  <span className="text-indigo-500 mt-1">•</span>
-                  Sklepy internetowe
-                </li>
-                <li className="flex items-start gap-2 text-slate-700 text-sm md:text-base">
-                  <span className="text-indigo-500 mt-1">•</span>
-                  Specjaliści (prawnicy, lekarze, księgowi)
-                </li>
-              </ul>
+              <p className="text-slate-700 leading-relaxed text-base md:text-lg mb-4">
+                W {miasto.name} SEO szczególnie mocno działa w branżach, w których klienci szukają usług lokalnie 
+                i porównują oferty bezpośrednio w Google. Dobrze zoptymalizowana strona pozwala znaleźć się 
+                przed konkurencją w najważniejszych momentach decyzji zakupowej.
+              </p>
             </div>
 
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
+              <li className="flex items-start gap-2 text-slate-700 text-sm md:text-base">
+                <span className="text-indigo-500 mt-1">•</span>
+                Lokalne usługi (fryzjerzy, kosmetyczki, mechanicy, firmy remontowe)
+              </li>
+              <li className="flex items-start gap-2 text-slate-700 text-sm md:text-base">
+                <span className="text-indigo-500 mt-1">•</span>
+                Restauracje, kawiarnie i gastronomia
+              </li>
+              <li className="flex items-start gap-2 text-slate-700 text-sm md:text-base">
+                <span className="text-indigo-500 mt-1">•</span>
+                Sklepy internetowe obsługujące klientów z {miasto.name} i całego regionu
+              </li>
+              <li className="flex items-start gap-2 text-slate-700 text-sm md:text-base">
+                <span className="text-indigo-500 mt-1">•</span>
+                Specjaliści (prawnicy, lekarze, psychoterapeuci, księgowi)
+              </li>
+            </ul>
+          </section>
+
+          {/* SEKCJA: Proces SEO */}
+          <section className="rounded-2xl border border-slate-200 bg-slate-50/60 px-5 py-6 md:px-7 md:py-8 space-y-6">
+            <h2 className="text-3xl font-semibold text-slate-900 mb-3">
+              Jak wygląda proces SEO dla firm z {miasto.name}?
+            </h2>
+
+            <div className="space-y-4 text-slate-700 text-sm md:text-base leading-relaxed">
+              <p>
+                Praca nad SEO w {miasto.name} zaczyna się od dokładnego audytu strony oraz analizy konkurencji 
+                w lokalnych wynikach wyszukiwania. Następnie budujemy strategię, która łączy optymalizację techniczną, 
+                content marketing oraz działania off‑site (link building, sygnały lokalne).
+              </p>
+
+              <ul className="space-y-2">
+                <li>• audyt techniczny strony (Core Web Vitals, indeksacja, błędy 404, struktura linków),</li>
+                <li>• analiza konkurencji w {miasto.name} i województwie {miasto.wojewodztwo},</li>
+                <li>• przygotowanie strategii contentowej pod frazy lokalne,</li>
+                <li>• optymalizacja pod kątem konwersji (formularze, CTA, UX),</li>
+                <li>• budowa autorytetu domeny poprzez wartościowe linki i obecność w lokalnych serwisach.</li>
+              </ul>
+            </div>
+          </section>
+
+          {/* SEKCJA: Czas i efekty */}
+          <section className="space-y-4">
+            <h2 className="text-3xl font-semibold text-slate-900 mb-3">
+              Ile trwa SEO w {miasto.name} i kiedy widać efekty?
+            </h2>
+            <p className="text-slate-700 leading-relaxed text-sm md:text-base">
+              Czas potrzebny na osiągnięcie widocznych efektów SEO zależy od konkurencji w danej branży 
+              oraz aktualnego stanu strony. W wielu przypadkach pierwsze wzrosty ruchu organicznego 
+              w {miasto.name} widać już po kilku tygodniach, natomiast stabilne pozycje na najważniejsze frazy 
+              buduje się w perspektywie kilku miesięcy.
+            </p>
+            <p className="text-slate-700 leading-relaxed text-sm md:text-base">
+              Najważniejsze jest to, że dobrze wykonane SEO w {miasto.name} przynosi długoterminowe efekty 
+              i pozwala budować przewagę nad konkurencją, która polega wyłącznie na reklamach płatnych.
+            </p>
           </section>
 
           {/* CTA */}
@@ -132,8 +194,8 @@ export default function MiastoPage() {
               Chcesz zdobywać klientów w {miasto.name}?
             </h2>
             <p className="text-sm md:text-lg opacity-90 mb-5 md:mb-6 max-w-2xl mx-auto">
-              Oferujemy profesjonalne pozycjonowanie lokalne dopasowane do rynku w {miasto.name}. 
-              Skontaktuj się z nami i otrzymaj darmową analizę SEO.
+              Oferujemy profesjonalne pozycjonowanie lokalne dopasowane do rynku w {miasto.name} i województwie {miasto.wojewodztwo}. 
+              Skontaktuj się z nami i otrzymaj darmową analizę SEO oraz rekomendacje działań dla Twojej branży.
             </p>
             <a
               href="/#"
